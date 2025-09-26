@@ -8,22 +8,29 @@ class ScrollAnimations {
   }
 
   init() {
-    // Configuração do observer
+    // Configuração do observer ajustada para mobile
+    const isMobile = window.innerWidth <= 768;
     const options = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: isMobile ? 0.1 : 0.15,
+      rootMargin: isMobile ? '0px 0px -50px 0px' : '0px 0px -100px 0px'
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.target.hasAttribute('data-animated')) {
+        // Verifica se já foi animado
+        if (entry.target.hasAttribute('data-animated') || entry.target.classList.contains('animate-in')) {
           return;
         }
 
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          entry.target.setAttribute('data-animated', 'true');
-          this.observer.unobserve(entry.target);
+          // Adiciona delay pequeno para evitar conflitos
+          setTimeout(() => {
+            if (!entry.target.hasAttribute('data-animated')) {
+              entry.target.classList.add('animate-in');
+              entry.target.setAttribute('data-animated', 'true');
+              this.observer.unobserve(entry.target);
+            }
+          }, 50);
         }
       });
     }, options);
@@ -45,6 +52,11 @@ class ScrollAnimations {
     ].join(', '));
 
     elementsToAnimate.forEach(element => {
+      // Pula elementos já processados
+      if (element.hasAttribute('data-animated') || element.classList.contains('animate-in')) {
+        return;
+      }
+
       const rect = element.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
 
