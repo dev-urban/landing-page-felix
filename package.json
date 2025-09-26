@@ -1,12 +1,15 @@
 {
-  "name": "24barra7-landing",
-  "version": "1.0.0",
-  "description": "Landing page 24/Sete hosted on Railway",
-  "main": "server.js",
+  "name": "positivus-landing",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "start": "node server.js"
+    "dev": "astro dev",
+    "start": "astro preview",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "astro": "^5.13.11"
   }
 }

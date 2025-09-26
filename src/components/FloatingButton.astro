@@ -1,0 +1,100 @@
+---
+
+---
+
+<div class="floating-button-container">
+  <a href="#formulario" class="floating-btn">
+    Quero Investir
+  </a>
+</div>
+
+<style>
+  .floating-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  .floating-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .floating-btn:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.5);
+    animation: none;
+  }
+
+  .floating-btn:active {
+    transform: translateY(0) scale(1);
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(34, 197, 94, 0.6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .floating-button-container {
+      bottom: 15px;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+
+    .floating-btn {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .floating-btn {
+      padding: 0.7rem 1rem;
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const floatingBtn = document.querySelector('.floating-btn');
+
+    floatingBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>

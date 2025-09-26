@@ -1,0 +1,237 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Félix Moinhos | Lofts Premium para Investimento | Urban Company", description = "Invista em lofts premium no Moinhos de Vento. Rentabilidade de até R$ 6.134/mês com gestão profissional. O melhor investimento de Porto Alegre." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script src="/src/scripts/scrollAnimations.js"></script>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #552613;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #c36a42;
+    border: 2px solid #c36a42;
+  }
+
+  .btn-secondary:hover {
+    background: #c36a42;
+    color: white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3rem); }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section-dark {
+    background: #552613;
+    color: #ffffff;
+  }
+
+  .section-light {
+    background: #d9d9d9;
+  }
+
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+  .price-highlight {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c36a42;
+  }
+
+  .price-sub {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #bcbec0;
+  }
+
+  /* Animações no scroll */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: bounceScale 0.6s ease-out;
+  }
+
+  @keyframes bounceScale {
+    0% {
+      transform: translateY(0) scale(0.8);
+    }
+    50% {
+      transform: translateY(0) scale(1.05);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Diferentes tipos de animação */
+  .animate-slide-left {
+    transform: translateX(-40px) scale(0.8);
+  }
+
+  .animate-slide-left.animate-in {
+    transform: translateX(0) scale(1);
+    animation: bounceScaleX 0.6s ease-out;
+  }
+
+  .animate-slide-right {
+    transform: translateX(40px) scale(0.8);
+  }
+
+  .animate-slide-right.animate-in {
+    transform: translateX(0) scale(1);
+    animation: bounceScaleX 0.6s ease-out;
+  }
+
+  .animate-scale {
+    transform: scale(0.7);
+  }
+
+  .animate-scale.animate-in {
+    transform: scale(1);
+    animation: bounceScale 0.6s ease-out;
+  }
+
+  @keyframes bounceScaleX {
+    0% {
+      transform: translateX(0) scale(0.8);
+    }
+    50% {
+      transform: translateX(0) scale(1.05);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  /* Animações específicas para mobile */
+  @media (max-width: 768px) {
+    .animate-on-scroll {
+      transform: translateY(50px) scale(0.7);
+    }
+
+    .animate-on-scroll.animate-in {
+      animation: mobileCardBounce 0.8s ease-out;
+    }
+
+    @keyframes mobileCardBounce {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.7);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.08);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .section {
+      padding: 3rem 0;
+    }
+  }
+</style>

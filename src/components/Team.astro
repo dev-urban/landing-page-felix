@@ -1,0 +1,253 @@
+---
+
+---
+
+<section id="galeria" class="section galeria section-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>Conheça o Félix Moinhos</h2>
+      <p>Lofts premium no coração do Moinhos de Vento - o bairro que mais valoriza em Porto Alegre</p>
+    </div>
+
+    <div class="galeria-grid">
+      <div class="galeria-item large" data-category="fachada">
+        <img src="/images/fachada-min.jpg" alt="Fachada do Félix Moinhos" class="galeria-image">
+        <div class="image-overlay">
+          <h3>Fachada</h3>
+          <p>Arquitetura moderna e sofisticada</p>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-category="interior">
+        <img src="/images/interior-1-min.jpg" alt="Interior do Félix Moinhos" class="galeria-image">
+        <div class="image-overlay">
+          <h3>Interior</h3>
+          <p>Ambientes planejados</p>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-category="vista">
+        <img src="/images/vista-min.jpg" alt="Vista do Félix Moinhos" class="galeria-image">
+        <div class="image-overlay">
+          <h3>Vista</h3>
+          <p>Vista privilegiada do Moinhos de Vento</p>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-category="lazer">
+        <img src="/images/lazer-min.jpg" alt="Área de lazer do Félix Moinhos" class="galeria-image">
+        <div class="image-overlay">
+          <h3>Área de Lazer</h3>
+          <p>Espaços para relaxar e socializar</p>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-category="quarto">
+        <img src="/images/interior-2-min.jpg" alt="Suíte do Félix Moinhos" class="galeria-image">
+        <div class="image-overlay">
+          <h3>Suíte Master</h3>
+          <p>Conforto e elegância</p>
+        </div>
+      </div>
+
+      <div class="galeria-item" data-category="cozinha">
+        <img src="/images/interior-1-min.jpg" alt="Cozinha do Félix Moinhos" class="galeria-image">
+        <div class="image-overlay">
+          <h3>Cozinha Gourmet</h3>
+          <p>Equipada e funcional</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="galeria-cta">
+      <h3>Quer conhecer o Félix Moinhos pessoalmente?</h3>
+      <p>Agende uma visita e veja de perto todos os diferenciais deste investimento premium no coração de Porto Alegre</p>
+      <a href="#contato" class="btn btn-primary">Quero Investir</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .galeria {
+    background: #d9d9d9;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    color: #552613;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #c36a42, #c36a42);
+    border-radius: 2px;
+  }
+
+  .section-header p {
+    color: #000000;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .galeria-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .galeria-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .galeria-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .galeria-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .galeria-item:hover .galeria-image {
+    transform: scale(1.1);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .galeria-item:hover .image-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .image-overlay h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .image-overlay p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+  }
+
+  .galeria-cta {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .galeria-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  .galeria-cta h3 {
+    color: #552613;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .galeria-cta p {
+    color: #000000;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .galeria-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 200px;
+    }
+
+    .galeria-item.large {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .image-overlay {
+      padding: 1.5rem;
+      transform: translateY(0);
+      opacity: 1;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    }
+
+    .galeria-cta {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .galeria-grid {
+      gap: 1rem;
+    }
+  }
+</style>

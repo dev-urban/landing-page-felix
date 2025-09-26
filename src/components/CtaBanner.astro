@@ -1,0 +1,99 @@
+---
+
+---
+
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h3>🔥 Últimas unidades disponíveis!</h3>
+        <p>Não perca a oportunidade de investir no Félix Moinhos. Últimas unidades com desconto especial.</p>
+        <a href="#formulario" class="btn btn-primary">Garantir minha unidade</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .cta-banner {
+    padding: 3rem 0;
+    background: #ffffff;
+  }
+
+  .cta-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .cta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3), 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-content h3 {
+    color: #552613;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .cta-content p {
+    color: #552613;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-content .btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .cta-content .btn:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+    animation: none;
+  }
+
+  .cta-content .btn:active {
+    transform: translateY(0) scale(1);
+  }
+
+  @media (max-width: 768px) {
+    .cta-card {
+      padding: 1.5rem;
+    }
+
+    .cta-content h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>

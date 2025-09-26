@@ -1,0 +1,573 @@
+---
+
+---
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-logo">
+          <img src="/images/logo_felix.png" alt="Félix Moinhos" class="hero-logo-image">
+        </div>
+        <p class="hero-description">
+          <span class="highlight-text">Rentabilize até <strong>R$ 6.134,00</strong><br><strong>por mês.</strong></span><br>
+          <span class="location-text">Locação flexível no <strong>Moinhos de Vento</strong></span><br>
+          <span class="appreciation-text">Valorização de <strong>60% no aluguel</strong></span>
+        </p>
+      </div>
+
+      <div class="hero-form" id="formulario">
+        <div class="form-container">
+          <h3>Garanta sua oportunidade</h3>
+          <p>Preencha o formulário e receba mais informações</p>
+          <form id="lead-form">
+            <div class="form-group">
+              <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="telefone" name="telefone" placeholder="Telefone com DDD" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary form-btn">Quero investir no Félix</button>
+            </div>
+            <p class="form-disclaimer">Seus dados estão seguros conosco. Não compartilhamos suas informações.</p>
+          </form>
+        </div>
+
+        <div class="price-highlight-box">
+          <div class="price-discount-banner">
+            🔥 Desconto de R$ 18.411 para as primeiras unidades
+          </div>
+          <div class="price-content">
+            <div class="price-part">
+              <span class="price-label">Entrada</span>
+              <span class="price-value">R$ 45.000</span>
+            </div>
+            <div class="price-plus">+</div>
+            <div class="price-part">
+              <span class="price-label">Parcelas</span>
+              <span class="price-value">39x R$ 999</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .hero {
+    background: #2d2d2d;
+    padding: 8rem 0 5rem;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/fachada-min.jpg') no-repeat center;
+    background-size: cover;
+    opacity: 0;
+    filter: blur(0px);
+    animation: heroBackgroundIn 2s ease-out forwards;
+  }
+
+  .hero-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    animation: darkOverlayIn 2.5s ease-out 0.5s forwards;
+  }
+
+  @keyframes heroBackgroundIn {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    50% {
+      opacity: 0.5;
+      filter: blur(5px);
+    }
+    100% {
+      opacity: 0.3;
+      filter: blur(2px);
+    }
+  }
+
+  @keyframes darkOverlayIn {
+    from {
+      background: rgba(0, 0, 0, 0);
+    }
+    to {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    min-height: 70vh;
+    position: relative;
+    z-index: 2;
+    padding-top: 0;
+  }
+
+  .hero-text {
+    animation: fadeInUp 0.8s ease-out 0.3s backwards;
+  }
+
+  .hero-text h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-size: clamp(2.75rem, 5vw, 4rem);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-logo {
+    margin-bottom: 0;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+  }
+
+  .hero-logo-image {
+    height: 400px;
+    width: 600px;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.5);
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.7));
+  }
+
+  .hero-text .highlight {
+    color: #c36a42;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #c36a42;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero-description {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-weight: 600;
+    text-shadow: none;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.7s backwards;
+  }
+
+  .highlight-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .highlight-text strong {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  }
+
+  .location-text {
+    font-size: 1.1rem;
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .location-text strong {
+    color: #22c55e !important;
+  }
+
+  .appreciation-text {
+    font-size: 1.1rem;
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .appreciation-text strong {
+    color: #22c55e !important;
+  }
+
+  .hero-description strong {
+    color: #c36a42;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .hero-subtitle {
+    color: #bcbec0;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    color: #bcbec0;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .hero-bottom {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .price-highlight-box {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.8s ease-out 0.9s backwards;
+  }
+
+  .price-discount-banner {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .price-content {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .price-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #552613;
+  }
+
+  .price-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #552613;
+    margin-bottom: 0.25rem;
+  }
+
+  .price-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Playfair Display', serif;
+    color: #552613;
+  }
+
+  .price-plus {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c36a42;
+  }
+
+
+  .hero-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+    align-self: start;
+    animation: slideInRight 0.8s ease-out 0.4s backwards;
+  }
+
+  @media (max-width: 768px) {
+    .hero-form {
+      animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    }
+  }
+
+  .form-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: -40px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .form-container:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .form-container h3 {
+    color: #552613;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .form-container p {
+    color: #552613;
+    margin-bottom: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #d9d9d9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #c36a42;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(195, 106, 66, 0.15);
+  }
+
+  .form-btn {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .form-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(195, 106, 66, 0.3);
+  }
+
+  .form-btn:active {
+    transform: translateY(0);
+  }
+
+  .form-disclaimer {
+    font-size: 0.875rem;
+    color: #552613;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 6rem 0 3rem;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding-top: 2rem;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-bottom {
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-content {
+      flex-direction: row;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    .price-plus {
+      font-size: 1.5rem;
+    }
+
+    .price-value {
+      font-size: 1rem;
+    }
+
+    .price-label {
+      font-size: 0.75rem;
+    }
+
+    .hero-logo-image {
+      height: 250px;
+      width: 400px;
+      transform: scale(1.4);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+
+    .hero-form {
+      gap: 1rem;
+    }
+
+    .form-container {
+      position: static;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#lead-form');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(form);
+      const nome = formData.get('nome');
+      const email = formData.get('email');
+      const telefone = formData.get('telefone');
+
+      // Simple validation
+      if (!nome || !email || !telefone) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+
+      // Submit to webhook
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+
+      submitButton.textContent = 'Enviando...';
+      submitButton.disabled = true;
+
+      // Prepare data for webhook
+      const data = {
+        body: {
+          nome: nome,
+          email: email,
+          telefone: telefone
+        }
+      };
+
+      // Send to webhook
+      fetch('https://n8n.urban.imb.br/webhook/landing-pages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro na rede');
+        }
+        return response.json().catch(() => ({})); // Handle non-JSON responses
+      })
+      .then(data => {
+        alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
+        form.reset();
+      })
+      .finally(() => {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
+    });
+  });
+</script>
