@@ -4,12 +4,15 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "HOST=0.0.0.0 astro preview --host 0.0.0.0",
+    "start": "serve dist -l ${PORT:-8080}",
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^5.13.11"
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
   }
 }
