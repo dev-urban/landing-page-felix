@@ -10,21 +10,19 @@ class ScrollAnimations {
   init() {
     // Configuração do observer
     const options = {
-      threshold: 0.1, // Trigger quando 10% do elemento estiver visível
-      rootMargin: '0px 0px -50px 0px' // Trigger um pouco antes do elemento entrar na tela
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        // Verifica se o elemento já foi animado antes
         if (entry.target.hasAttribute('data-animated')) {
           return;
         }
 
-        if (entry.isIntersecting && this.scrollDirection === 'down') {
+        if (entry.isIntersecting) {
           entry.target.classList.add('animate-in');
           entry.target.setAttribute('data-animated', 'true');
-          // Para elementos que só devem animar uma vez
           this.observer.unobserve(entry.target);
         }
       });
@@ -34,7 +32,6 @@ class ScrollAnimations {
   }
 
   observeElements() {
-    // Seleciona todos os elementos que devem ter animação no scroll
     const elementsToAnimate = document.querySelectorAll([
       '.diferencial-card',
       '.reason-item',
@@ -48,34 +45,17 @@ class ScrollAnimations {
     ].join(', '));
 
     elementsToAnimate.forEach(element => {
-      // Verifica se o elemento já está visível na tela no carregamento
       const rect = element.getBoundingClientRect();
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
 
       if (isVisible) {
-        // Se já está visível, anima imediatamente
         element.classList.add('animate-in');
         element.setAttribute('data-animated', 'true');
       } else {
-        // Se não está visível, adiciona classe inicial e observa
         element.classList.add('animate-on-scroll');
         this.observer.observe(element);
       }
     });
-
-    // Adiciona listener para detectar direção do scroll
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          this.scrollDirection = currentScrollY > this.lastScrollY ? 'down' : 'up';
-          this.lastScrollY = currentScrollY;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
   }
 
   destroy() {
@@ -85,13 +65,15 @@ class ScrollAnimations {
   }
 }
 
-// Inicializa quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', () => {
-  new ScrollAnimations();
-});
+// Inicializa apenas uma vez
+if (!window.scrollAnimationsInitialized) {
+  window.scrollAnimationsInitialized = true;
 
-// Para desenvolvimento - reinicializa se a página for recarregada via HMR
-if (typeof window !== 'undefined' && window.scrollAnimations) {
-  window.scrollAnimations.destroy();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      window.scrollAnimations = new ScrollAnimations();
+    });
+  } else {
+    window.scrollAnimations = new ScrollAnimations();
+  }
 }
-window.scrollAnimations = new ScrollAnimations();
