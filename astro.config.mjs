@@ -8,6 +8,11 @@ export default defineConfig({
     host: true
   },
   vite: {
+    server: {
+      host: '0.0.0.0',
+      strictPort: false,
+      allowedHosts: ['*']
+    },
     preview: {
       port: Number(process.env.PORT) || 8080,
       host: '0.0.0.0',
