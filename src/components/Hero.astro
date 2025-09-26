@@ -443,6 +443,7 @@
   @media (max-width: 768px) {
     .hero {
       padding: 6rem 0 3rem;
+      overflow-x: hidden;
     }
 
     .hero-content {
@@ -482,10 +483,16 @@
       font-size: 0.75rem;
     }
 
+    .hero-logo {
+      max-width: 100%;
+      overflow: hidden;
+    }
+
     .hero-logo-image {
-      height: 250px;
-      width: 400px;
-      transform: scale(1.4);
+      height: auto;
+      width: 100%;
+      max-width: 350px;
+      transform: scale(1.2);
     }
 
     .hero-subtitle {
