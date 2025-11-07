@@ -31,10 +31,10 @@
 
           <div class="form-group">
             <label for="message">Mensagem (opcional)</label>
-            <textarea id="message" name="message" rows="4" placeholder="Conte-nos mais sobre seu interesse no Félix Moinhos"></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Conte-nos mais sobre seu interesse no Square Garden"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">Quero investir no Félix</button>
+          <button type="submit" class="btn btn-primary">Quero investir no Square Garden</button>
         </form>
       </div>
 
@@ -116,7 +116,7 @@
   }
 
   .contact {
-    background: #552613;
+    background: #111909;
     color: white;
   }
 
@@ -148,7 +148,7 @@
 
   .contact-form-container {
     background: white;
-    border: 1px solid #552613;
+    border: 1px solid #111909;
     border-radius: 45px;
     padding: 3rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -178,7 +178,7 @@
 
   .form-group label {
     font-weight: 500;
-    color: #552613;
+    color: #111909;
   }
 
   .form-group input,
@@ -194,9 +194,9 @@
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #c36a42;
+    border-color: #5b6f42;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(195, 106, 66, 0.15);
+    box-shadow: 0 4px 12px rgba(91, 111, 66, 0.15);
   }
 
   .form-group textarea {
@@ -215,9 +215,9 @@
     align-items: flex-start;
     gap: 1rem;
     padding: 1.5rem;
-    background: #d4a574;
+    background: #5b6f42;
     border-radius: 20px;
-    border: 1px solid #d4a574;
+    border: 1px solid #5b6f42;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -230,7 +230,7 @@
     flex-shrink: 0;
     width: 50px;
     height: 50px;
-    background: #552613;
+    background: #111909;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -330,12 +330,12 @@
         return response.json().catch(() => ({})); // Handle non-JSON responses
       })
       .then(data => {
-        alert('Obrigado pelo seu interesse no Félix Moinhos! Nossa equipe entrará em contato em breve.');
+        alert('Obrigado pelo seu interesse no Square Garden! Nossa equipe entrará em contato em breve.');
         form.reset();
       })
       .catch(error => {
         console.error('Erro:', error);
-        alert('Obrigado pelo seu interesse no Félix Moinhos! Nossa equipe entrará em contato em breve.');
+        alert('Obrigado pelo seu interesse no Square Garden! Nossa equipe entrará em contato em breve.');
         form.reset();
       })
       .finally(() => {
