@@ -8,12 +8,12 @@
     <div class="hero-content">
       <div class="hero-text">
         <div class="hero-logo">
-          <img src="/images/logo-square-garden.png" alt="Square Garden" class="hero-logo-image">
+          <img src="/images/logo_felix.png" alt="Félix Moinhos" class="hero-logo-image">
         </div>
         <p class="hero-description">
-          <span class="highlight-text">Rentabilize até<br><strong>R$&nbsp;4.522,50</strong><br><strong>por mês.</strong></span><br>
-          <span class="location-text">Junto ao <strong>Maior Food Hall do Brasil</strong></span><br>
-          <span class="appreciation-text">Gestão <strong>Embarcadero</strong> - Referência gastronômica</span>
+          <span class="highlight-text">Rentabilize até <strong>R$ 6.134,00</strong><br><strong>por mês.</strong></span><br>
+          <span class="location-text">Locação flexível no <strong>Moinhos de Vento</strong></span><br>
+          <span class="appreciation-text">Valorização de <strong>60% no aluguel</strong></span>
         </p>
       </div>
 
@@ -32,7 +32,7 @@
               <input type="tel" id="telefone" name="telefone" placeholder="Telefone com DDD" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary form-btn">Quero meu loft no Square Garden</button>
+              <button type="submit" class="btn btn-primary form-btn">Quero investir no Félix</button>
             </div>
             <p class="form-disclaimer">Seus dados estão seguros conosco. Não compartilhamos suas informações.</p>
           </form>
@@ -40,17 +40,17 @@
 
         <div class="price-highlight-box">
           <div class="price-discount-banner">
-            🔥 Loft com desconto de R$ 21.274 no pré-lançamento
+            🔥 Desconto de R$ 18.411 para as primeiras unidades
           </div>
           <div class="price-content">
             <div class="price-part">
               <span class="price-label">Entrada</span>
-              <span class="price-value">5x R$ 8.900</span>
+              <span class="price-value">R$ 45.000</span>
             </div>
             <div class="price-plus">+</div>
             <div class="price-part">
               <span class="price-label">Parcelas</span>
-              <span class="price-value">41x R$ 1.100</span>
+              <span class="price-value">39x R$ 999</span>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/images/predio.webp') no-repeat center;
+    background: url('/images/fachada-min.jpg') no-repeat center;
     background-size: cover;
     opacity: 0;
     filter: blur(0px);
@@ -209,13 +209,13 @@
   }
 
   .hero-text .highlight {
-    color: #bea044;
+    color: #c36a42;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
 
   .hero-subtitle {
     font-size: clamp(1.5rem, 3vw, 2rem);
-    color: #bea044;
+    color: #c36a42;
     margin-top: -1.5rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -269,7 +269,7 @@
   }
 
   .hero-description strong {
-    color: #bea044;
+    color: #c36a42;
     font-weight: 800;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
@@ -328,7 +328,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #111909;
+    color: #552613;
   }
 
   .price-label {
@@ -336,7 +336,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #111909;
+    color: #552613;
     margin-bottom: 0.25rem;
   }
 
@@ -344,13 +344,13 @@
     font-size: 1.5rem;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
-    color: #111909;
+    color: #552613;
   }
 
   .price-plus {
     font-size: 2rem;
     font-weight: 700;
-    color: #bea044;
+    color: #c36a42;
   }
 
 
@@ -385,13 +385,13 @@
   }
 
   .form-container h3 {
-    color: #111909;
+    color: #552613;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }
 
   .form-container p {
-    color: #111909;
+    color: #552613;
     margin-bottom: 2rem;
   }
 
@@ -411,9 +411,9 @@
 
   .form-group input:focus {
     outline: none;
-    border-color: #5b6f42;
+    border-color: #c36a42;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(91, 111, 66, 0.15);
+    box-shadow: 0 4px 12px rgba(195, 106, 66, 0.15);
   }
 
   .form-btn {
@@ -425,7 +425,7 @@
 
   .form-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(91, 111, 66, 0.3);
+    box-shadow: 0 10px 25px rgba(195, 106, 66, 0.3);
   }
 
   .form-btn:active {
@@ -434,7 +434,7 @@
 
   .form-disclaimer {
     font-size: 0.875rem;
-    color: #111909;
+    color: #552613;
     text-align: center;
     margin-top: 1rem;
     line-height: 1.4;
@@ -443,7 +443,6 @@
   @media (max-width: 768px) {
     .hero {
       padding: 6rem 0 3rem;
-      overflow-x: hidden;
     }
 
     .hero-content {
@@ -483,16 +482,10 @@
       font-size: 0.75rem;
     }
 
-    .hero-logo {
-      max-width: 100%;
-      overflow: hidden;
-    }
-
     .hero-logo-image {
-      height: auto;
-      width: 100%;
-      max-width: 350px;
-      transform: scale(1.2);
+      height: 250px;
+      width: 400px;
+      transform: scale(1.4);
     }
 
     .hero-subtitle {
