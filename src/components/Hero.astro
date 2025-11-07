@@ -563,6 +563,22 @@
         return response.json().catch(() => ({})); // Handle non-JSON responses
       })
       .then(data => {
+        // Send event to Google Tag Manager
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            'event': 'form_submit',
+            'form_name': 'lead_form_hero',
+            'form_location': 'hero'
+          });
+        }
+
+        // Send conversion event to Google Ads
+        if (window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-11105885842/envio_formulario'
+          });
+        }
+
         alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
         form.reset();
       })
