@@ -573,27 +573,11 @@
         }
 
         // Send conversion event to Google Ads
-        console.log('Aguardando gtag carregar...');
-        if (window.gtag) {
-          console.log('gtag disponível, enviando conversão...');
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
-          });
-          console.log('Conversão enviada com sucesso!');
-        } else {
-          console.warn('gtag ainda não carregou, tentando aguardar...');
-          setTimeout(function() {
-            if (window.gtag) {
-              console.log('gtag carregou após espera, enviando conversão...');
-              window.gtag('event', 'conversion', {
-                'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
-              });
-              console.log('Conversão enviada com sucesso!');
-            } else {
-              console.error('gtag não carregou mesmo após espera');
-            }
-          }, 500);
-        }
+        console.log('Enviando conversão para Google Ads...');
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
+        });
+        console.log('Conversão enviada: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
 
         alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
         form.reset();
