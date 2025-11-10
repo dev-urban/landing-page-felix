@@ -574,10 +574,20 @@
 
         // Send conversion event to Google Ads
         console.log('Enviando conversão para Google Ads...');
-        gtag('event', 'conversion', {
-          'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
-        });
-        console.log('Conversão enviada: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
+        if (typeof window.gtag !== 'undefined') {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
+          });
+          console.log('Conversão enviada: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
+        } else {
+          // Usa dataLayer diretamente
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'conversion',
+            'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
+          });
+          console.log('Conversão enviada via dataLayer: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
+        }
 
         alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
         form.reset();
