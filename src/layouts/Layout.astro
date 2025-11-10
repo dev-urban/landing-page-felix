@@ -19,12 +19,23 @@ const { title = "Square Garden | Studios Premium com Food Hall | Urban Company",
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
     <!-- Google tag (gtag.js) -->
-    <script src="https://www.googletagmanager.com/gtag/js?id=AW-11105885842"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11105885842"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-11105885842');
+
+      // Helper para garantir que gtag está pronto
+      window.gtagReady = function(callback) {
+        if (typeof gtag !== 'undefined') {
+          callback();
+        } else {
+          setTimeout(function() {
+            window.gtagReady(callback);
+          }, 100);
+        }
+      };
     </script>
     <title>{title}</title>
   </head>
