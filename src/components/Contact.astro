@@ -341,9 +341,13 @@
 
         // Send conversion event to Google Ads
         if (window.gtag) {
+          console.log('Enviando conversão para Google Ads...');
           window.gtag('event', 'conversion', {
             'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
           });
+          console.log('Conversão enviada: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
+        } else {
+          console.error('gtag não está disponível');
         }
 
         alert('Obrigado pelo seu interesse no Square Garden! Nossa equipe entrará em contato em breve.');
