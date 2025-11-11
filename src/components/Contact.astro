@@ -339,6 +339,12 @@
           });
         }
 
+        // Send conversion events to Google Ads
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', {'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'});
+          gtag('event', 'conversion', {'send_to': 'AW-11105885842/_tz3CNiL4Y4YEJK92a8p'});
+        }
+
         alert('Obrigado pelo seu interesse no Square Garden! Nossa equipe entrará em contato em breve.');
         form.reset();
       })
