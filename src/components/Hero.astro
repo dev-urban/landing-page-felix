@@ -563,30 +563,13 @@
         return response.json().catch(() => ({})); // Handle non-JSON responses
       })
       .then(data => {
-        // Send event to dataLayer
+        // Send event to Google Tag Manager
         if (window.dataLayer) {
           window.dataLayer.push({
             'event': 'form_submit',
             'form_name': 'lead_form_hero',
             'form_location': 'hero'
           });
-        }
-
-        // Send conversion event to Google Ads
-        console.log('Enviando conversão para Google Ads...');
-        if (typeof window.gtag !== 'undefined') {
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
-          });
-          console.log('Conversão enviada: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
-        } else {
-          // Usa dataLayer diretamente
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'event': 'conversion',
-            'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'
-          });
-          console.log('Conversão enviada via dataLayer: AW-11105885842/_TeYCJiCj8EZEJK92a8p');
         }
 
         alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
