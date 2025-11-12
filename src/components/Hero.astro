@@ -570,6 +570,19 @@
             'form_name': 'lead_form_hero',
             'form_location': 'hero'
           });
+
+          // Send lead_whatsapp event to GA4
+          window.dataLayer.push({
+            'event': 'lead_whatsapp',
+            'user_data': {
+              'email_address': email,
+              'phone_number': telefone,
+              'address': {
+                'first_name': nome
+              }
+            },
+            'imovel': 'Square Garden'
+          });
         }
 
         // Redirecionar para página de obrigado
