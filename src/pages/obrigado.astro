@@ -1,0 +1,201 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Obrigado! | Square Garden" description="Obrigado pelo seu interesse no Square Garden. Nossa equipe entrará em contato em breve.">
+  <div class="thank-you-page">
+    <div class="container">
+      <div class="thank-you-content">
+        <div class="check-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="#22c55e" stroke-width="2"/>
+            <path d="M8 12l3 3 5-5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1>Obrigado pelo seu interesse!</h1>
+
+        <p class="main-message">
+          Recebemos suas informações com sucesso.
+        </p>
+
+        <p class="sub-message">
+          Nossa equipe especializada entrará em contato em breve para apresentar todos os detalhes do <strong>Square Garden</strong> e esclarecer suas dúvidas sobre este investimento premium.
+        </p>
+
+        <div class="info-box">
+          <h3>O que acontece agora?</h3>
+          <ul>
+            <li>✓ Nossa equipe analisará seu perfil</li>
+            <li>✓ Você receberá informações exclusivas sobre o empreendimento</li>
+            <li>✓ Agendaremos uma apresentação personalizada</li>
+            <li>✓ Responderemos todas as suas dúvidas</li>
+          </ul>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="/" class="btn btn-primary">Voltar para o início</a>
+          <a href="https://wa.me/5551999999999" class="btn btn-secondary" target="_blank">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event snippet for Conversao leads por URL de obrigado conversion page -->
+  <script>
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {'send_to': 'AW-11105885842/_TeYCJiCj8EZEJK92a8p'});
+      gtag('event', 'conversion', {'send_to': 'AW-11105885842/_tz3CNiL4Y4YEJK92a8p'});
+    }
+  </script>
+</Layout>
+
+<style>
+  .thank-you-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #111909 0%, #2d3a1f 100%);
+    padding: 2rem 0;
+  }
+
+  .container {
+    max-width: 800px;
+  }
+
+  .thank-you-content {
+    background: white;
+    border-radius: 45px;
+    padding: 4rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .check-icon {
+    margin-bottom: 2rem;
+    animation: scaleIn 0.5s ease-out;
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    color: #111909;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .main-message {
+    font-size: 1.25rem;
+    color: #111909;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .sub-message {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .info-box {
+    background: #f8fdf9;
+    border: 2px solid #22c55e;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+  .info-box h3 {
+    color: #111909;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .info-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .info-box li {
+    padding: 0.5rem 0;
+    color: #111909;
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #22c55e;
+    border: 2px solid #22c55e;
+  }
+
+  .btn-secondary:hover {
+    background: #22c55e;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .thank-you-content {
+      padding: 2rem;
+      border-radius: 25px;
+    }
+
+    .info-box {
+      padding: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>
