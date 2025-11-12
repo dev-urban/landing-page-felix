@@ -18,6 +18,14 @@ const { title = "Square Garden | Studios Premium com Food Hall | Urban Company",
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
+    <!-- Google tag (gtag.js) - DEVE VIR ANTES DO GTM -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11105885842"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11105885842');
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -25,15 +33,6 @@ const { title = "Square Garden | Studios Premium com Food Hall | Urban Company",
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PV38FNF');</script>
     <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11105885842"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-11105885842');
-    </script>
     <title>{title}</title>
   </head>
   <body>
